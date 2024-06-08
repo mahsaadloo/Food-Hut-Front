@@ -1,10 +1,9 @@
-import { ChildrenType } from 'app/Types'
-import React from 'react'
+import { ChildrenType } from "app/Types";
+import React from "react";
 
-const Layout = (props:ChildrenType) => {
-  return (
-    <div>Layout</div>
-  )
-}
+const Layout = (props: ChildrenType) => {
+  const { children } = props;
+  return <div>{children}</div>;
+};
 
-export default Layout
+export default Layout;
