@@ -16,7 +16,7 @@ const theme = createTheme({
     },
     secondary: {
       main: "#fdc55e"
-    }
+    },
   },
   typography: {
     fontFamily: roboto.style.fontFamily,
