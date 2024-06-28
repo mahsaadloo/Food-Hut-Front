@@ -12,7 +12,6 @@ import {
   SvgIconProps,
   Typography,
 } from "@mui/material";
-import HeaderImg from "../../public/images/HeaderImg.png";
 import Image from "next/image";
 import CustomInput from "./CustomInput";
 import SearchIcon from "@mui/icons-material/Search";
