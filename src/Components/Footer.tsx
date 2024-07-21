@@ -127,11 +127,10 @@ const Footer = () => {
             <Stack
               direction="row"
               alignItems="center"
-              justifyContent="start"
               spacing={2}
             >
               <CustomInput defaultValue="Email" />
-              <CustomButton sx={{ paddingY: 1 }}>Subscribe</CustomButton>
+              <CustomButton>Subscribe</CustomButton>
             </Stack>
           </Stack>
         </Grid>
