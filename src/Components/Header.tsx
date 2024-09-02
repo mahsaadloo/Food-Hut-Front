@@ -11,11 +11,24 @@ import {
   SvgIcon,
   SvgIconProps,
   Typography,
+  TypographyProps,
 } from "@mui/material";
 import Image from "next/image";
 import CustomInput from "./CustomInput";
 import SearchIcon from "@mui/icons-material/Search";
 import CustomButton from "./CustomButton";
+import { styled } from "@mui/material/styles";
+
+const StyledHeader = styled(Typography)<TypographyProps>(({ theme }) => ({
+  fontSize: "58px",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "48px",
+  },
+  fontWeight: "900",
+  paddingRight: "1px",
+
+  "&:hover": {},
+}));
 
 const HeartIcon = (props: SvgIconProps) => (
   <SvgIcon
@@ -49,65 +62,28 @@ const Header = () => {
                 direction="row"
                 spacing={1}
                 padding={0.5}
-                width={1 / 3}
+                width="170px"
               >
                 <HeartIcon />
                 <Typography>People Trust us</Typography>
               </Stack>
               <Box sx={{ paddingTop: "20px" }}>
-                <Stack direction="row">
-                  <Typography
-                    component="span"
-                    fontSize="58px"
-                    fontWeight={900}
-                    paddingRight={1}
-                  >
-                    We&apos;re
-                  </Typography>
-                  <Typography
-                    component="span"
-                    sx={{ color: (t) => t.palette.primary.main }}
-                    fontSize="58px"
-                    fontWeight={900}
-                    paddingRight={1}
-                  >
+                <StyledHeader>
+                  We&apos;re{" "}
+                  <StyledHeader component="span" color="primary">
                     Serious
-                  </Typography>
-                  <Typography component="span" fontSize="58px" fontWeight={900}>
-                    For
-                  </Typography>
-                </Stack>
-                <Stack direction="row">
-                  <Typography
-                    component="span"
-                    sx={{ color: (t) => t.palette.primary.main }}
-                    fontSize="58px"
-                    fontWeight={900}
-                    paddingRight={1}
-                  >
+                  </StyledHeader>{" "}
+                  <StyledHeader component="span">For</StyledHeader>
+                  <br />
+                  <StyledHeader component="span" color="primary">
                     Food
-                  </Typography>
-                  <Typography
-                    component="span"
-                    fontSize="58px"
-                    fontWeight={900}
-                    paddingRight={1}
-                  >
-                    &
-                  </Typography>
-                  <Typography
-                    component="span"
-                    sx={{ color: (t) => t.palette.secondary.main }}
-                    fontSize="58px"
-                    fontWeight={900}
-                    paddingRight={1}
-                  >
+                  </StyledHeader>{" "}
+                  <StyledHeader component="span">&</StyledHeader>{" "}
+                  <StyledHeader component="span" color="secondary">
                     Delivery
-                  </Typography>
-                  <Typography component="span" fontSize="58px" fontWeight={900}>
-                    .
-                  </Typography>
-                </Stack>
+                  </StyledHeader>{" "}
+                  <StyledHeader component="span">.</StyledHeader>
+                </StyledHeader>
               </Box>
 
               <Stack pt={2}>
@@ -159,12 +135,9 @@ const Header = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
             <Stack>
-              <Image
-                src="/images/HeaderImage.svg"
-                width={488}
-                height={489}
-                alt="Headerimage"
-              />
+              <Box width="100%" position="relative" height={489}>
+                <Image src="/images/HeaderImage.svg" fill alt="Headerimage" />
+              </Box>
             </Stack>
           </Grid>
           <Stack pt={5} pl={2}>
